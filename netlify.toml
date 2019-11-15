@@ -1,6 +1,20 @@
 [build]
 publish = "public"
 command = "./stackbit-build.sh"
+functions = "./lambda"
+
+[[redirects]]
+from = "/posts/*"
+to = "/posts/:splat"
+status = 200
+force = true
+conditions = {Role = ["member"]}
+[[redirects]]
+from = "/posts/*"
+to = "/gated/"
+status = 404
+force = true
+
 
   [build.environment]
   HUGO_VERSION = "0.47"
