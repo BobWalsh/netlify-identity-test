@@ -14,7 +14,3 @@ from = "/posts/*"
 to = "/gated/"
 status = 404
 force = true
-
-
-  [build.environment]
-  HUGO_VERSION = "0.47"
